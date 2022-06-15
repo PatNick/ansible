@@ -3,7 +3,7 @@
   tags:
     - neovim
 - name: Clone neovim
-  ansible.builtin.git:
+  git:
     repo: 'https://github.com/neovim/neovim.git'
     dest: "{{ lookup('env', 'HOME') }}/neovim"
     single_branch: yes

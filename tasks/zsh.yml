@@ -11,13 +11,13 @@
   tags:
   - zsh
 - name: Install zsh plugin autosuggestions
-  ansible.builtin.git:
+  git:
     repo: "https://github.com/zsh-users/zsh-autosuggestions"
     dest: "~/.oh-my-zsh/plugins/zsh-autosuggestions"
   tags:
   - zsh
 - name: Install zsh plugin syntax highlighting
-  ansible.builtin.git:
+  git:
     repo: "https://github.com/zsh-users/zsh-syntax-highlighting.git"
     dest: "~/.oh-my-zsh/plugins/zsh-syntax-highlighting"
   tags:

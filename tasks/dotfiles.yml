@@ -3,7 +3,7 @@
   tags:
     - dotfiles
 - name: Clone .dotfiles
-  ansible.builtin.git:
+  git:
     repo: 'git@github.com:patnick/dotfiles.git'
     dest: "{{ lookup('env', 'HOME') }}/.dotfiles"
     accept_hostkey: yes
