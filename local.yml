@@ -1,0 +1,18 @@
+- hosts: localhost
+  become: true
+  vars:
+    source_key: "./.ssh/id_rsa"
+    dest_key: "{{ lookup('env', 'HOME') }}/.ssh/id_rsa"
+  pre_tasks:
+  - name: Upgrade all packages
+    dnf:
+      name: "*"
+      state: latest
+  tasks:
+  - include: tasks/zsh.yml
+  - include: tasks/neovim.yml
+  - include: tasks/ssh.yml
+  - include: tasks/git_setup.yml
+  - include: tasks/dotfiles.yml
+  - include: tasks/go.yml
+  - include: tasks/productivity.yml

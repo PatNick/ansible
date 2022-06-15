@@ -1,0 +1,8 @@
+- name: Install go
+  dnf: name=go
+  tags:
+  - go
+- name: Install gopls
+  shell: go install golang.org/x/tools/gopls@latest
+  tags:
+  - go
