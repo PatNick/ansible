@@ -2,4 +2,4 @@
 
 sudo dnf install -y ansible curl git
 
-sudo ansible-pull --ask-vault-pass -U https://github.com/PatNick/ansible.git
+#sudo ansible-pull --ask-vault-pass -U https://github.com/PatNick/ansible.git
