@@ -7,7 +7,7 @@
   tags:
   - zsh
 - name: Install ohmyzsh
-  shell: sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+  shell: sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
   tags:
   - zsh
 - name: Install zsh plugin autosuggestions
