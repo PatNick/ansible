@@ -1,9 +1,9 @@
 - hosts: localhost
-  become: true
   vars:
     source_key: "./.ssh/id_rsa"
     dest_key: "{{ lookup('env', 'HOME') }}/.ssh/id_rsa"
   pre_tasks:
+    become: true
   - name: Upgrade all packages
     dnf:
       name: "*"
