@@ -1,9 +1,11 @@
 - name: Install zsh
+  become: true
   dnf: name=zsh
   tags:
   - zsh
 - name: Change shell
-  shell: chsh -s `which zsh`
+  become: true
+  shell: chsh -s `which zsh` pat
   tags:
   - zsh
 - name: Install ohmyzsh
