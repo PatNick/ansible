@@ -25,6 +25,6 @@
   tags:
     - dotfiles
 - name: Stow dotfiles
-  shell: cd $HOME/.dotfiles && ./fedora.sh
+  shell: cd $HOME/dotfiles && ./fedora.sh
   tags:
     - dotfiles
