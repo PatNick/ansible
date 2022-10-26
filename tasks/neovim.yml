@@ -27,6 +27,8 @@
     - neovim
 - name: Prep for Packer
   shell: mkdir -p ~/.local/share
+  tags:
+    - neovim
 - name: Install Packer
   git:
     repo: "https://github.com/wbthomason/packer.nvim"
