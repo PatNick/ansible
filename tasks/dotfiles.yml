@@ -8,13 +8,13 @@
     owner: pat
     group: pat
     path: "{{ lookup('env', 'HOME') }}/.local/bin"
-    mode: 0755
+    mode: '0755'
     state: directory
   file:
     owner: pat
     group: pat
     path: "{{ lookup('env', 'HOME') }}/.config"
-    mode: 0755
+    mode: '0755'
     state: directory
   tags:
     - dotfiles
