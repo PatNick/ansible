@@ -2,6 +2,7 @@
   become: true
   file:
     owner: pat
+    group: pat
     path: "{{ dest_key | dirname }}"
     mode: 0700
     state: directory
@@ -10,6 +11,8 @@
     - ssh
 - name: Install ssh key
   copy:
+    owner: pat
+    group: pat
     src: "{{ source_key }}"
     dest: "{{ dest_key }}"
     mode: 0600
