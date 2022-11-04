@@ -1,5 +1,7 @@
 - name: Remove neovim
-  shell: rm -rf ~/neovim
+  file:
+    path: "{{ lookup('env', 'HOME') }}/neovim"
+    state: absent
   tags:
     - neovim
 - name: Clone neovim
