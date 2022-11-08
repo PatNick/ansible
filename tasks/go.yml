@@ -7,3 +7,7 @@
   shell: go install golang.org/x/tools/gopls@latest
   tags:
   - go
+- name: Install delve
+  shell: go install github.com/go-delve/delve/cmd/dlv@latest
+  tags:
+  - go
