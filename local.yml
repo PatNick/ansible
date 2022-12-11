@@ -16,3 +16,4 @@
   - import_tasks: tasks/dotfiles.yml
   - import_tasks: tasks/go.yml
   - import_tasks: tasks/productivity.yml
+  - import_tasks: tasks/lua.yml

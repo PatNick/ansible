@@ -1,0 +1,26 @@
+- name: Install lua
+  become: true
+  dnf:
+    name: [ "ninja-build", "lua", "libstdc++-static", "gcc-c++", "clang" ]
+  tags:
+  - lua
+- name: Setup sumneko lua lsp
+  git:
+    repo: "git@github.com:sumneko/lua-language-server.git"
+    dest: "{{ lookup('env', 'HOME') }}/sumneko"
+    recursive: yes
+    accept_hostkey: yes
+  tags:
+    - lua
+- name: Build Sumneko
+  shell:
+    cmd: ./compile/install.sh
+    chdir: "{{ lookup('env', 'HOME') }}/sumneko/3rd/luamake"
+  tags:
+    - lua
+- name: Finish the dude off with the built
+  shell:
+    cmd: ./3rd/luamake/luamake rebuild
+    chdir: "{{ lookup('env', 'HOME') }}/sumneko/"
+  tags:
+    - lua
