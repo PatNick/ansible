@@ -1,10 +1,10 @@
 - name: Install lua
   become: true
   dnf:
-    name: [ "ninja-build", "lua", "libstdc++-static", "gcc-c++", "clang" ]
+    name: "lua"
   tags:
-  - lua
-  - neovim
+    - lua
+    - neovim
 - name: Setup sumneko lua lsp
   git:
     repo: "git@github.com:sumneko/lua-language-server.git"

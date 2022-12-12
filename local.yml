@@ -8,7 +8,11 @@
     dnf:
       name: "*"
       state: latest
+    tags:
+      - install
+      - core
   tasks:
+  - import_tasks: tasks/core_setup.yml
   - import_tasks: tasks/zsh.yml
   - import_tasks: tasks/neovim.yml
   - import_tasks: tasks/ssh.yml
