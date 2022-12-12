@@ -3,5 +3,4 @@
   dnf:
     name: [ "tmux", "fzf", "gimp", "fd-find" ]
   tags:
-    - install
     - productivity
