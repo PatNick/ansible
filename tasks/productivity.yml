@@ -1,6 +1,6 @@
 - name: Install productivity packages
   become: true
   dnf:
-    name: [ "tmux", "fzf", "gimp", "fd-find" ]
+    name: [ "tmux", "fzf", "gimp", "fd-find", "ripgrep" ]
   tags:
     - productivity
