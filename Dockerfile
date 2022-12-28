@@ -1,4 +1,4 @@
-FROM fedora:36 AS base
+FROM fedora:37 AS base
 WORKDIR /usr/local/bin
 RUN dnf update -y && dnf install -y git passwd curl util-linux-user which
 
