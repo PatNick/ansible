@@ -11,7 +11,7 @@
   tags:
     - neovim
 - name: Build neovim
-  shell: "cd {{ lookup('env', 'HOME') }}/neovim && git checkout stable && make CMAKE_BUILD_TYPE=Release -j 8"
+  shell: "cd {{ lookup('env', 'HOME') }}/neovim && make CMAKE_BUILD_TYPE=Release -j 8"
   tags:
     - neovim
 - name: Install neovim
