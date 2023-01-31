@@ -4,7 +4,6 @@
     name: ["lua", "lua-devel"]
   tags:
     - lua
-    - neovim
 - name: Setup sumneko lua lsp
   git:
     repo: "git@github.com:sumneko/lua-language-server.git"
@@ -13,25 +12,21 @@
     accept_hostkey: yes
   tags:
     - lua_lsp
-    - neovim
 - name: Build Sumneko
   shell:
     cmd: ./compile/install.sh
     chdir: "{{ lookup('env', 'HOME') }}/sumneko/3rd/luamake"
   tags:
     - lua_lsp
-    - neovim
 - name: Finish Build Sumneko
   shell:
     cmd: ./3rd/luamake/luamake rebuild
     chdir: "{{ lookup('env', 'HOME') }}/sumneko/"
   tags:
     - lua_lsp
-    - neovim
 - name: Neovim Plugin Development 1
   become: true
   dnf:
     name: "luarocks"
   tags:
     - lua_lsp
-    - neovim
