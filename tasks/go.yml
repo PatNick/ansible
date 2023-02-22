@@ -1,9 +1,19 @@
-- name: Install go
+- name: Remove go
   become: true
-  dnf: name=go
+  file:
+    path: "/usr/local/go"
+    state: absent
   tags:
-  - go
+    - offgo
+- name: Unarchive a file that needs to be downloaded
+  become: true
+  ansible.builtin.unarchive:
+    src: https://go.dev/dl/go1.20.1.linux-amd64.tar.gz
+    dest: /usr/local/
+    remote_src: yes
+  tags:
+    - offgo
 - name: Install delve
-  shell: go install github.com/go-delve/delve/cmd/dlv@latest
+  shell: /usr/local/go/bin/go install github.com/go-delve/delve/cmd/dlv@latest
   tags:
-  - go
+  - offgo
