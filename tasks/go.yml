@@ -4,7 +4,7 @@
     path: "/usr/local/go"
     state: absent
   tags:
-    - offgo
+    - go
 - name: Unarchive a file that needs to be downloaded
   become: true
   ansible.builtin.unarchive:
@@ -12,8 +12,8 @@
     dest: /usr/local/
     remote_src: yes
   tags:
-    - offgo
+    - go
 - name: Install delve
   shell: /usr/local/go/bin/go install github.com/go-delve/delve/cmd/dlv@latest
   tags:
-  - offgo
+  - go
