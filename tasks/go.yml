@@ -8,7 +8,7 @@
 - name: Unarchive a file that needs to be downloaded
   become: true
   ansible.builtin.unarchive:
-    src: https://go.dev/dl/go1.20.1.linux-amd64.tar.gz
+    src: https://go.dev/dl/go1.20.3.linux-amd64.tar.gz
     dest: /usr/local/
     remote_src: yes
   tags:
