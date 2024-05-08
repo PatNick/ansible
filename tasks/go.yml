@@ -5,15 +5,19 @@
     state: absent
   tags:
     - go
-- name: Unarchive a file that needs to be downloaded
+- name: Download and install Go
   become: true
   ansible.builtin.unarchive:
-    src: https://go.dev/dl/go1.20.4.linux-amd64.tar.gz
+    src: https://go.dev/dl/go1.22.0.linux-amd64.tar.gz
     dest: /usr/local/
     remote_src: yes
   tags:
     - go
 - name: Install delve
   shell: /usr/local/go/bin/go install github.com/go-delve/delve/cmd/dlv@latest
+  tags:
+  - go
+- name: Install gopls
+  shell: /usr/local/go/bin/go install golang.org/x/tools/gopls@latest
   tags:
   - go
