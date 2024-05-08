@@ -4,6 +4,20 @@
     state: absent
   tags:
     - neovim
+- name: Uninstall
+  become: true
+  file:
+    path: "/usr/local/bin/nvim"
+    state: absent
+  tags:
+    - neovim
+- name: Uninstall 2
+  become: true
+  file:
+    path: "/usr/local/share/nvim/"
+    state: absent
+  tags:
+    - neovim
 - name: Clone neovim
   git:
     repo: 'https://github.com/neovim/neovim.git'
